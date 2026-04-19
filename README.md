@@ -6,6 +6,12 @@
 
 A graph-aware quantile load forecaster for a realistic APS-like distribution feeder, paired with a scenario-based decision layer that lets utility planners simulate stress under extreme heat and EV evening-peak growth.
 
+### 🔗 [**Live demo → p90-aixenergy.vercel.app**](https://p90-aixenergy.vercel.app)
+
+[![Open the Dashboard](https://img.shields.io/badge/Open_Dashboard-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://p90-aixenergy.vercel.app/dashboard)
+[![Methodology](https://img.shields.io/badge/Methodology-2563EB?style=for-the-badge)](https://p90-aixenergy.vercel.app/methodology)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Yalamanchili7/p90_AI_for_Energy_APS)
+
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 ![Python](https://img.shields.io/badge/python-3.11-blue.svg)
 ![Next.js](https://img.shields.io/badge/next.js-14-black.svg)
@@ -20,6 +26,7 @@ A graph-aware quantile load forecaster for a realistic APS-like distribution fee
 
 ## Table of contents
 
+- [Live demo](#-live-demo)
 - [What it does](#what-it-does)
 - [Headline results](#headline-results)
 - [Architecture](#architecture)
@@ -34,6 +41,18 @@ A graph-aware quantile load forecaster for a realistic APS-like distribution fee
 - [Acknowledgments](#acknowledgments)
 
 ---
+
+## 🚀 Live demo
+
+The full dashboard runs live at **[p90-aixenergy.vercel.app](https://p90-aixenergy.vercel.app)** — no install needed.
+
+| Page | URL |
+| --- | --- |
+| Landing | [p90-aixenergy.vercel.app](https://p90-aixenergy.vercel.app) |
+| Operator dashboard | [p90-aixenergy.vercel.app/dashboard](https://p90-aixenergy.vercel.app/dashboard) |
+| Methodology | [p90-aixenergy.vercel.app/methodology](https://p90-aixenergy.vercel.app/methodology) |
+
+The demo uses pre-computed forecast snapshots for instant loading. For live XGBoost inference with unlimited scenarios, clone the repo and run locally (instructions below).
 
 ## What it does
 
@@ -69,6 +88,7 @@ A **spatio-temporal GCN** (28,552 params, GRU → 2× GCN → quantile heads) is
 | Data | IEEE PES 34-bus feeder, NOAA KPHX, NREL NSRDB, NREL EVI-Pro Lite |
 | Backend | FastAPI + uvicorn (Python 3.11) |
 | Frontend | Next.js 14, TypeScript, Tailwind, Plotly, Leaflet |
+| Deployment | Vercel (frontend) · local FastAPI (backend) |
 
 ## Repository layout
 
@@ -87,11 +107,16 @@ A **spatio-temporal GCN** (28,552 params, GRU → 2× GCN → quantile heads) is
 ├── checkpoints/            # Trained XGBoost quantile models + GCN
 ├── backend/                # FastAPI inference server (port 8001)
 │   ├── app/main.py
-│   └── scripts/generate_positions.py
+│   └── scripts/
+│       ├── generate_positions.py    # synthetic Phoenix coordinates
+│       └── generate_demo_data.py    # snapshot data for Vercel demo
 ├── frontend/               # Next.js dashboard (port 3001)
+│   ├── public/demo-data/   # pre-computed forecasts for Vercel
 │   └── src/
 │       ├── app/            # landing, /dashboard, /methodology
 │       └── components/
+├── docs/
+│   └── DEPLOY_VERCEL.md    # deployment guide
 ├── LICENSE
 └── README.md
 ```
