@@ -178,7 +178,7 @@ export function FeederMap({
       },
       {
         type: "scatter",
-        mode: "markers+text" as const,
+        mode: "markers+text" as any,
         x: nodeX,
         y: nodeY,
         text: nodeLabels,
