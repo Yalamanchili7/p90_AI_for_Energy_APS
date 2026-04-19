@@ -1,0 +1,41 @@
+# Dependencies will be added as each component is built.
+# Core scientific stack
+numpy>=1.26,<2.0
+pandas>=2.1,<3.0
+pyarrow>=14.0
+scipy>=1.11
+
+# Deep learning
+torch>=2.1,<2.5
+torch-geometric>=2.4
+
+# Classical ML baseline
+xgboost>=2.0
+scikit-learn>=1.3
+
+# Power systems
+OpenDSSDirect.py>=0.8
+
+# Solar / weather
+pvlib>=0.10
+meteostat>=1.6
+
+# Geospatial (light use)
+geopandas>=0.14
+shapely>=2.0
+
+# Dashboard
+streamlit>=1.30
+plotly>=5.18
+matplotlib>=3.7
+
+# Utilities
+pyyaml>=6.0
+requests>=2.31
+tqdm>=4.66
+python-dotenv>=1.0
+networkx>=3.0
+
+# Development
+jupyter>=1.0
+ruff>=0.1

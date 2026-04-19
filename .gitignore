@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+.next/
+out/
+.env
+.env.local
+.env*.local
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Large data files — keep out of git
+data/raw/
+data/processed/*.npy
+data/processed/*.npz
+data/processed/features_X_full.npy
+data/processed/targets_y.npy
+data/processed/valid_starts.npy
+
+# Keep small metadata/config files
+!data/processed/feature_names.txt
+!data/processed/metrics_summary.json
+!data/processed/scenario_summary.json
+!data/processed/sample_timestamps.parquet
+!data/processed/bus_metadata_ieee34.parquet
+!data/processed/edges_ieee34.parquet
+!data/processed/bus_positions_synthetic.parquet
+!data/processed/split_indices.npz
+!data/processed/graph_neighbors.npz
+
+# Large model checkpoints — decide case by case below
+# Uncomment if any are >50MB:
+# checkpoints/*.pt
+# checkpoints/*.pkl

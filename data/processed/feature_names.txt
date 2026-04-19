@@ -1,0 +1,15 @@
+temp_f
+humidity_pct
+ghi_wm2
+cooling_degree_hours
+heatwave_day_counter
+is_weekend
+is_monsoon_season
+hour_sin
+hour_cos
+doy_sin
+doy_cos
+base_kw
+frac_res
+frac_com
+load_kw_history
